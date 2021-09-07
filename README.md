@@ -1,24 +1,7 @@
-# todo
+# Todo
 
-## Project setup
-```
-yarn install
-```
+Todo with vue
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+cli 로 vue 만들어서 todolist 작성
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+다음은 vuex를 이용하여 만들고 그 다음은 cli없이 webpack으로 만들어볼 예정
