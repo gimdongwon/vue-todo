@@ -1,4 +1,8 @@
 <template>
+  <div class="nav">
+    <router-link to="/">Home</router-link>
+    <router-link to="/chat">Chat</router-link>
+  </div>
   <div class="container">
     <div class="col-md-6 offset-md-3">
       <h1 class="text-center mb-4">Todo Application with Vue</h1>
@@ -45,6 +49,7 @@
 
 <script>
 import Todo from "./components/Todo.vue";
+import { mapState } from "vuex";
 export default {
   name: "App",
   data() {
@@ -62,6 +67,11 @@ export default {
           this.currentState === "all" || todo.state === this.currentState
       );
     },
+    ...mapState({
+      chatList: (state) => state.chatList,
+      // chatList: 'chatList' // 위와 동일
+      // chatList(state){return state.chatList.filter(chat=> chat.new>=2)}  // 동일
+    }),
   },
   methods: {
     changeCurrentState(state) {
@@ -96,5 +106,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
